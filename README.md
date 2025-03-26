@@ -6,11 +6,15 @@
 
 This project analyzes casino operational data to extract actionable business insights. It includes:
 
-- **Data cleaning** for messy in dataset
-- **Market performance** benchmarking
-- **Player behavior** analysis (LTV, churn prediction)
-- **Time series forecasting** for revenue prediction
-- **Bonus effectiveness** evaluation
+✔ **Data cleaning** for messy in dataset
+
+✔ **Market performance** benchmarking
+
+✔ **Player behavior** analysis (LTV, churn prediction)
+
+✔ **Time series forecasting** for revenue prediction
+
+✔ **Bonus effectiveness** evaluation
 
 Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmodels.
 
@@ -82,24 +86,24 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 
 ## Market GGR Comparison
 
-<image Top Markets by GGR>
+(Sample <image Top Markets by GGR>
 
 ## Revenue Forescast
 
-<image GGR Forecast>
+(Sample <image GGR Forecast>
 
 ## Player Segments
 
-<image RFM Segmentation>
+(Sample <image RFM Segmentation>
 
 # 🤝 Contributing
 1. Fork the project
 
-2. Create a feature branch (git checkout -b feature/your-feature)
+2. Create a feature branch (```git checkout -b feature/your-feature```)
 
-3. Commit changes (git commit -m 'Add some feature')
+3. Commit changes (```git commit -m 'Add some feature```)
 
-4. Push to the branch (git push origin feature/your-feature)
+4. Push to the branch (```git push origin feature/your-feature```)
 
 5. Open a Pull Request
 
@@ -107,11 +111,14 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 MIT License - see LICENSE for details.
 
 # 📬 Contact
-Lucas Vicente
-📧 lucas_balncam@outlook.com
-🔗 LinkedIn <html https://www.linkedin.com/in/lucas-vicente-028a4514a/>
 
-**🎲 Ready to level up your casino analytics?** Clone and start exploring!
+**Lucas Vicente**
+
+📧 lucas_balncam@outlook.com
+
+🔗 LinkedIn [Lucas Vicente](https://www.linkedin.com/in/lucas-vicente-028a4514a/)
+
+## **🎲 Ready to level up your igaming analytics?** Clone and start exploring!
 
 *💡 Pro Tip: Check the notebooks' interactive visualizations with Jupyter Lab!*
     ```bash
