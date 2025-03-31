@@ -22,7 +22,7 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 
 ### 1. Clone the repository:
    ```bash
-   git clone https://github.com/lucasvpinheiro/casino-data-analytics.git
+   git clone https://github.com/lucasvpinheiro/iGaming-Analytics
    cd casino-data-analytics
    ```
 ### 2. Set up a virtual environment (recommended):
