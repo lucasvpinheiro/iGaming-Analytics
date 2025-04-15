@@ -1,12 +1,12 @@
-   1: # Step 1 - Import the Libraries
-   2:
+# Step 1 - Import the Libraries
+2:
 # Import the necessary package
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-   3: # Step 2 - Loading the files
-   4:
+3: # Step 2 - Loading the files
+4:
 # Load the csv file and check
 df_raw = pd.read_csv('cassino_data.csv')
 df_raw.head()
