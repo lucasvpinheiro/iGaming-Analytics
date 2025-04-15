@@ -27,7 +27,7 @@ def clean_numeric_column(column):
 non_numeric_cols = ['year', 'month', 'site_id', 'market']
 for col in df_raw.columns:
     if col not in non_numeric_cols:
-        df_raw[col] = clean_numeric_column(df_raw[col])
+        df_raw[col] = df_raw[col].astype('float32')
 
 # Ensure 'year' is properly formatted (remove commas)
 df_raw['year'] = df_raw['year'].astype(str).str.replace(',', '').astype(int)
@@ -94,6 +94,9 @@ df_raw['ggr_consistent'] = abs(df_raw['ggr_eur'] - df_raw['ggr_calculated']) <= 
 print(f"Percentage of consistent GGR rows: {df_raw['ggr_consistent'].mean()*100:.2f}%")
 # Yeah! Works too!
 # I Run Again the "Option 1" to ensure all GGR values mathematically correct.
+significant_discrepancies = df_raw[
+    abs(df_raw['ggr_discrepancy']) > (0.01 * df_raw['turnover_eur'])
+]
 
 df_raw['ggr_eur'] = df_raw['turnover_eur'] - df_raw['winnings_eur']
 
@@ -115,6 +118,7 @@ monthly_trend.plot(marker='o')
 plt.title('Monthly GGR Trend')
 plt.ylabel('GGR (EUR)')
 plt.grid(True)
+plt.savefig('reports/monthly_ggr_trend.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # Insights:
@@ -138,6 +142,7 @@ product_mix = df_raw[product_cols].sum()
 plt.figure(figsize=(8,8))
 plt.pie(product_mix, labels=product_mix.index, autopct='%1.1f%%')
 plt.title('Revenue Share by Product Type')
+plt.savefig('reports/product_mix.png', dpi=300, transparent=True)
 plt.show()
 
 # Insights:
@@ -165,6 +170,7 @@ sns.barplot(x=top_markets.index, y='ggr_eur', data=top_markets)
 plt.title('Top 10 Markets by Gross Gaming Revenue (GGR)')
 plt.ylabel('Total GGR (EUR)')
 plt.xticks(rotation=45)
+plt.savefig('reports/top_markets.png', dpi=300)
 plt.show()
 # Insights:
 
@@ -234,7 +240,11 @@ plt.show()
 # Optional Analysis | Risk Assessment
 
 # Winning Player Analysis
-df_raw['house_edge'] = df_raw['ggr_eur'] / df_raw['turnover_eur']
+df_raw['house_edge'] = np.where(
+    df_raw['turnover_eur'] == 0,
+    np.nan,
+    df_raw['ggr_eur'] / df_raw['turnover_eur']
+)
 risk_analysis = df_raw.groupby('market')['house_edge'].mean().sort_values()
 
 risk_analysis.plot(kind='barh', figsize=(10,6))
