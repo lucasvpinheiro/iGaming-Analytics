@@ -33,7 +33,7 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
    ```
 ### 3. Install dependencies:
    ```bash
-   pip  install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 ## 📂 File Structure
@@ -57,19 +57,16 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 
 - ⏳ Lifetime Value (LVT) modeling
 - 🔁 Churn prediction with 85% accuracy
-![Monthly Trend](reports/monthly_ggr_trend.png)
   
 ### 2. Operational Insights
 
 - 🎁 Bonus ROI analysis (Optimal bonus/deposit ratio: 20%)
 - 📈 6-month revenue forecasting (ARIMA & Prophet)
-![Product Mix](reports/product_mix.png)
 
 ### 3. Marketing Performance
 
 - 📈 Identified top-performing markets (Brazil, Sweden, Finland) <thinking about>
 - 🔄 Calculated Gross Gaming Revenue (GGR) trends by country <thinking about>
-![Top Markets](reports/top_markets.png)
 
 ## 📂 How to use
 
@@ -89,15 +86,15 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 
 ## Market GGR Comparison
 
-(Sample <image Top Markets by GGR>
+![Monthly Trend](reports/monthly_ggr_trend.png)
 
 ## Revenue Forescast
 
-(Sample <image GGR Forecast>
+![Product Mix](reports/product_mix.png)
 
 ## Player Segments
 
-(Sample <image RFM Segmentation>
+![Top Markets](reports/top_markets.png)
 
 # 🤝 Contributing
 1. Fork the project
