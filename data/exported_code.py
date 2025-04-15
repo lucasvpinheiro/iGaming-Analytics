@@ -1,17 +1,17 @@
 # Step 1 - Import the Libraries
-2:
+
 # Import the necessary package
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-3: # Step 2 - Loading the files
-4:
+
+# Step 2 - Loading the files
 # Load the csv file and check
 df_raw = pd.read_csv('cassino_data.csv')
 df_raw.head()
-   5: # Step 3 - Cleaning Data
-   6:
+
+# Step 3 - Cleaning Data
 # Load the data with proper cleaning
 def clean_numeric_column(column):
     if column.dtype == 'object':
@@ -34,8 +34,8 @@ df_raw['year'] = df_raw['year'].astype(str).str.replace(',', '').astype(int)
 
 # Check cleaned data types
 print(df_raw.dtypes)
-   7: # Step 4 - Verifying Missing/Inconsistent Data
-   8:
+
+# Step 4 - Verifying Missing/Inconsistent Data
 # Fill missing values with 0 (for financial metrics)
 financial_cols = [col for col in df_raw.columns if '_eur' in col]
 df_raw[financial_cols] = df_raw[financial_cols].fillna(0)
@@ -47,8 +47,8 @@ df_raw[count_cols] = df_raw[count_cols].fillna(0).astype(int)
 # Verify no negative values where they shouldn't exist
 print("Negative registrations:", df_raw[df_raw['registrations'] < 0].shape[0])
 print("Negative active players:", df_raw[df_raw['active_players'] < 0].shape[0])
-   9: # Step 5 - Verify Cleaning Worked
-  10:
+
+# Step 5 - Verify Cleaning Worked
 # Test if 'ngr_eur' is now numeric
 try:
     df_raw.groupby('market')['ngr_eur'].sum().sort_values(ascending=False).head(10).plot(kind='bar', figsize=(12,6))
@@ -59,14 +59,14 @@ except TypeError:
     print("Error: Data still not numeric!")
 else:
     print("Success!!! Data is clean and numeric.")
-  11: # Last verification | Calculation Consistency
-  12:
+# Last verification | Calculation Consistency
 # Ensure GGR = Turnover - Winnings
 inconsistent_rows = df_raw[abs(df_raw['ggr_eur'] - (df_raw['turnover_eur'] - df_raw['winnings_eur'])) > 0.01]
 print("Rows with inconsistent GGR calculation:", len(inconsistent_rows))
-  13: # Expected Output: "Rows with incosistent GGR calculation: 0 :(
-  14: # How to fix this?
-  15:
+# Expected Output: "Rows with incosistent GGR calculation: 0 :(
+
+# How to fix this?
+
 # Option 1 - Recalculate GGR
 # Overwrite GGR with the correct calculation
 df_raw['ggr_eur'] = df_raw['turnover_eur'] - df_raw['winnings_eur']
@@ -74,8 +74,8 @@ df_raw['ggr_eur'] = df_raw['turnover_eur'] - df_raw['winnings_eur']
 # Verify the fix
 inconsistent_rows = df_raw[abs(df_raw['ggr_eur'] - (df_raw['turnover_eur'] - df_raw['winnings_eur'])) > 0.01]
 print("Remaining inconsistent rows after correction:", len(inconsistent_rows))
-  16: # Works! :)
-  17:
+# Works! :)
+
 # Option 2 - Investigate Specifics Cases
 # Create a new column showing the discrepancy
 df_raw['ggr_discrepancy'] = df_raw['ggr_eur'] - (df_raw['turnover_eur'] - df_raw['winnings_eur'])
@@ -84,29 +84,29 @@ df_raw['ggr_discrepancy'] = df_raw['ggr_eur'] - (df_raw['turnover_eur'] - df_raw
 discrepancies = df_raw[abs(df_raw['ggr_discrepancy']) > 0.01].sort_values('ggr_discrepancy', ascending=False)
 print(f"Found {len(discrepancies)} rows with GGR discrepancies")
 discrepancies[['market', 'year', 'month', 'turnover_eur', 'winnings_eur', 'ggr_eur', 'ggr_discrepancy']].head()
-  18: # Works too
-  19:
+# Works too
+
 # Option 3 - Flag and Keep Both Values
 # Keep original GGR but add corrected version
 df_raw['ggr_calculated'] = df_raw['turnover_eur'] - df_raw['winnings_eur']
 df_raw['ggr_consistent'] = abs(df_raw['ggr_eur'] - df_raw['ggr_calculated']) <= 0.01
 
 print(f"Percentage of consistent GGR rows: {df_raw['ggr_consistent'].mean()*100:.2f}%")
-  20: # Yeah! Works too!
-  21:
+# Yeah! Works too!
 # I Run Again the "Option 1" to ensure all GGR values mathematically correct.
 
 df_raw['ggr_eur'] = df_raw['turnover_eur'] - df_raw['winnings_eur']
 
 inconsistent_rows = df_raw[abs(df_raw['ggr_eur'] - (df_raw['turnover_eur'] - df_raw['winnings_eur'])) > 0.01]
 print("Remaining inconsistent rows after correction:", len(inconsistent_rows))
-  22:
+
 # We need starts the Analyses
 # Now based on our cleaned dataset, we start the most valuable insights we can extract,
 # along with visualization examples and strategic recomendations
-  23: # ----------------------- CHARTS ------------------------------
-  24: # Analyse #1 - Monthly Trends & Seasonality
-  25:
+
+# ----------------------- CHARTS ------------------------------
+
+# Analyse #1 - Monthly Trends & Seasonality
 df_raw['date'] = pd.to_datetime(df_raw['year'].astype(str) + '-' + df_raw['month'].astype(str))
 monthly_trend = df_raw.groupby('date')['ggr_eur'].sum()
 
@@ -116,7 +116,7 @@ plt.title('Monthly GGR Trend')
 plt.ylabel('GGR (EUR)')
 plt.grid(True)
 plt.show()
-  26:
+
 # Insights:
 
 #- Peak seasons: e.g., holydays, sport events) visible in revenue spikes
@@ -128,8 +128,9 @@ plt.show()
 #- Plan marketing campaigns around peak periods
 #- Investigate downward trends (check competitor activity)
 #- Diversify product offerings if single-market dependent
-  27: # Analyse #2 - Product Mix Analysis
-  28:
+# -------------------------------------------------------
+
+# Analyse #2 - Product Mix Analysis
 # Check products turnovers 
 product_cols = ['sports_turnover_eur', 'casino_turnover_eur', 'live_casino_turnover_eur']
 product_mix = df_raw[product_cols].sum()
@@ -138,7 +139,7 @@ plt.figure(figsize=(8,8))
 plt.pie(product_mix, labels=product_mix.index, autopct='%1.1f%%')
 plt.title('Revenue Share by Product Type')
 plt.show()
-  29:
+
 # Insights:
 
 # Casino dominates (likely slots/table games)
@@ -150,8 +151,9 @@ plt.show()
 # Increase casino game variety (new slots, tournaments)
 # Boost sportsbook promotions during major events
 # Invest in live dealer experiences (high-margin product)
-  30: # Analyse #3 - Market Performance Analysis
-  31:
+# -------------------------------------------------------
+
+# Analyse #3 - Market Performance Analysis
 top_markets = df_raw.groupby('market').agg({
     'ggr_eur': 'sum',
     'active_players': 'sum',
@@ -164,7 +166,6 @@ plt.title('Top 10 Markets by Gross Gaming Revenue (GGR)')
 plt.ylabel('Total GGR (EUR)')
 plt.xticks(rotation=45)
 plt.show()
-  32:
 # Insights:
 
 #- Norway (NO), Finland (FI), and Sweden (SE) dominate in revenue
@@ -176,10 +177,10 @@ plt.show()
 #- Double down on top markets (NO, FI, SE) with targeted promotions
 #- Analyze Brazil's high player yield (GGR/player) for best practices
 #- Test market-specific bonuses in emerging markets (CL, PE)
-  33: # Optional Analyse | Player Behavior Metrics
-  34:
-# Deposit Patterns
+# -------------------------------------------------------
 
+# Optional Analyse | Player Behavior Metrics
+# Deposit Patterns
 
 deposit_analysis = df_raw.groupby('market').agg({
     'deposits_eur': 'sum',
@@ -190,7 +191,6 @@ deposit_analysis['avg_deposit'] = deposit_analysis['deposits_eur'] / deposit_ana
 deposit_analysis['deposits_per_player'] = deposit_analysis['deposits_eur'] / deposit_analysis['unique_depositors']
 
 deposit_analysis.sort_values('avg_deposit', ascending=False).head(5)
-  35:
 # Insights:
 
 #- High-value players in certain markets (e.g., SE, NO)
@@ -202,8 +202,9 @@ deposit_analysis.sort_values('avg_deposit', ascending=False).head(5)
 #- Develop VIP programs for high-value markets
 #- Implement deposit incentives in low-frequency markets
 #- Run cohort analysis to identify player lifecycle trends
-  36: # Optional Analyses | Bonus Effectiveness
-  37:
+# -------------------------------------------------------
+
+# Optional Analyses | Bonus Effectiveness
 bonus_impact = df_raw.groupby('market').agg({
     'bonus_issued_eur': 'sum',
     'ggr_eur': 'sum'
@@ -217,7 +218,6 @@ plt.title('Bonus ROI by Market')
 plt.xlabel('Bonus Issued (EUR)')
 plt.ylabel('GGR (EUR)')
 plt.show()
-  38:
 # Insights:
 
 #- Some markets convert bonuses better than others
@@ -229,7 +229,8 @@ plt.show()
 #- Optimize bonus structures by market
 #- Reduce bonuses in low-ROI markets
 #- A/B test bonus types (cashback vs. free spins)
-  39:
+# -------------------------------------------------------
+
 # Optional Analysis | Risk Assessment
 
 # Winning Player Analysis
@@ -240,7 +241,7 @@ risk_analysis.plot(kind='barh', figsize=(10,6))
 plt.title('Average House Edge by Market')
 plt.xlabel('House Edge %')
 plt.show()
-  40:
+
 # Insights:
 
 #- Variance in house edge across markets
@@ -252,7 +253,7 @@ plt.show()
 #- Review game configurations in low-edge markets
 #- Implement player risk scoring
 #- Ensure compliance with local regulations
-  41: # Advanced Analysis are in "arquivo X"
-  42:
+
+# Advanced Analysis are in "arquivo X"
+
 # Save all executed code to a .py file
-%history -g -f exported_code.py
