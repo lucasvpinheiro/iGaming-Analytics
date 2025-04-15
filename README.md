@@ -1,6 +1,6 @@
 # Casino Data Analytics Project
 
-**👀 My perspective on this fictional igaming company**
+**👀 My perspective on this fictional iGaming Company**
 
 ## 🔍 Overview
 
@@ -118,7 +118,7 @@ MIT License - see LICENSE for details.
 
 🔗 LinkedIn [Lucas Vicente](https://www.linkedin.com/in/lucas-vicente-028a4514a/)
 
-## **🎲 Ready to level up your igaming analytics?** Clone and start exploring!
+## **🎲 Ready to level up your iGaming Analytics?** Clone and start exploring!
 
 *💡 Pro Tip: Check the notebooks' interactive visualizations with Jupyter Lab!*
     ```bash
