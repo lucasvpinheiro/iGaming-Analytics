@@ -57,16 +57,19 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
 
 - ⏳ Lifetime Value (LVT) modeling
 - 🔁 Churn prediction with 85% accuracy
+![Monthly Trend](reports/monthly_ggr_trend.png)
   
 ### 2. Operational Insights
 
 - 🎁 Bonus ROI analysis (Optimal bonus/deposit ratio: 20%)
 - 📈 6-month revenue forecasting (ARIMA & Prophet)
+![Product Mix](reports/product_mix.png)
 
 ### 3. Marketing Performance
 
 - 📈 Identified top-performing markets (Brazil, Sweden, Finland) <thinking about>
 - 🔄 Calculated Gross Gaming Revenue (GGR) trends by country <thinking about>
+![Top Markets](reports/top_markets.png)
 
 ## 📂 How to use
 
