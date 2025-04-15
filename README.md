@@ -43,9 +43,9 @@ Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmode
         │   ├── raw/                          " original CSV files
         │   └── processed/                    " cleaned datasets
         ├── notebooks/
-        │   ├── 1_Data_Cleaning.ipynb         " data preprocessing
-        │   ├── 2_EDA.ipynb                   " exploratory analysis 
-        │   └── 3_Advanced_Analytics.ipynb    " forecasting & ML
+        │   ├── analysis.ipynb                " Original notebook
+        │   ├── analysis.md                   " Exported markdown 
+        │   └── analysis.py                   " Code-only export
         ├── reports/                          " exported visualizations
         ├── .gitignore
         ├── README.md                         " this file
