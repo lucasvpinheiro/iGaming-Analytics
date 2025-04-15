@@ -16,7 +16,7 @@ This project analyzes casino operational data to extract actionable business ins
 
 ✔ **Bonus effectiveness** evaluation
 
-Built with Python in Jupyter Notebook, using Pandas, Scikit-learn, and Statsmodels.
+Built with Python in Jupyter Notebook, using Pandas, Numpy, Seaborn and Matplotlib.
 
 ## 🏗️ Installation
 
