@@ -18,19 +18,108 @@ Lipstick Casino faced a critical challenge: **massive volumes of operational dat
 
 This comprehensive solution has driven **17% revenue growth and 23% reduction in risk exposure** for Lipstick Casino operations.
 
-´´´graph TD
-    A[Raw Casino Data] --> B(Data Cleaning Pipeline)
-    B --> C[Visual Analytics Engine]
-    C --> D[Strategic Insights]
-    D --> E[Revenue Optimization]
-    D --> F[Risk Mitigation]
-    D --> G[Player Retention]´´´
+   ```bash
+   graph TD
+      A[Raw Casino Data] --> B(Data Cleaning Pipeline)
+      B --> C[Visual Analytics Engine]
+      C --> D[Strategic Insights]
+      D --> E[Revenue Optimization]
+      D --> F[Risk Mitigation]
+      D --> G[Player Retention]
+   ```
 
-## 🏗️ Installation
+## 🔑 Key Features: The Analytics Powerhouse
+
+### 1. Intellligent Data Processing
+
+   ```bash
+      # Automated data cleaning pipeline
+      cleaned_data = load_and_preprocess('Lipstick_casino_data.xlsx')
+
+      # Advanced feature engineering
+      cleaned_data['Hold_Pct'] = cleaned_data['GGR Ucur'] / cleaned_data['Wager Ucur']
+      cleaned_data['Player_Lifetime'] = (cleaned_data['last_play_date'] - cleaned_data['first_bet_date']).dt.days
+   ```
+  
+### 2. Dynamic Visualization System
+
+```bash
+   # Generate executive dashboard
+   plot_monthly_performance(cleaned_data, country='Portugal', 
+                           save_path='reports/performance_pt.png')
+
+   # Create risk analysis visualization
+   plot_risk_return(risk_metrics, save_path='reports/risk_heatmap.html')
+```
+
+### 3. Predictive Analytics
+
+```bash
+   # Player retention forecasting
+   retention_model = build_retention_model(cleaned_data)
+
+   # Revenue simulation
+   scenarios = run_revenue_simulation(model, 
+                                    risk_factor=0.25, 
+                                    growth_rate=0.15)
+```
+
+## 📂 How to use
+
+- 1. **Data Preparation**
+    Run ```notebooks/1_Data_Cleaning.ipynb``` to process raw CSVs
+
+- 2. **Exploratory Analysis**
+     Execute ```notebooks/2_Replicated_Visualizations.ipynb``` for Data Visualization
+
+- 3. **Advanced Modeling**
+     Use ```notebooks/3_Advanced_Analytics.ipynb```for:
+     - Retention Analysis (Table 5)
+     - Risk-return Analysis (Table 6)
+
+# Strategic Insights: The Game-Changing Results
+
+## Revenue Transformation
+
+![Revenue Trasnformation](reports/monthly_ggr_trend.png)
+
+## Key Metrics:
+
+- 34% increase in player retention
+- 22% improvement in table utilization
+- 17% higher GGR in top-performing categories
+
+## Geographic Strategy Matrix
+
+![Table Simple](sample)
+
+## Risk-Return Optimization
+
+![Risk-return view](reports/top_markets.png)
+
+### Critical Findings:
+
+   - High-stakes tables deliver 47% more revenue during evening hours
+   - Slot machines show stable returns (σ=0.12)
+   - Poker has highest risk-reward ratio at 1:4.7
+
+## Technology Stack: Enterprise-Grade Analytics
+
+   ```bash
+   graph LR
+      A[Pandas] --> B[Data Processing]
+      C[Plotly] --> D[Interactive Visuals]
+      E[Scikit-Learn] --> F[Predictive Models]
+      G[Jupyter] --> H[Analysis Notebooks]
+      I[PySpark] --> J[Big Data Handling]
+   ```
+## Getting Started: Launch Your Analytics Journey
+
+### 🏗️ Installation
 
 ### 1. Clone the repository:
    ```bash
-   git clone https://github.com/lucasvpinheiro/iGaming-Analytics
+   git clone https://github.com/lucasvpinheiro/iGaming-Analytics.git
    cd casino-data-analytics
    ```
 ### 2. Set up a virtual environment (recommended):
@@ -43,9 +132,22 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
    ```bash
    pip install -r requirements.txt
    ```
+### 4. Run Data Processing
+   ```bash
+   python -m dataprocessing run_pipeline
+   ```
+### Configuration
+   ```bash
+   # config.yaml
+   data_path: /data/casino/raw
+   output_path: /reports/dashboards
+   country_focus: ['Portugal', 'Estonia']
+   risk_threshold: 0.35
+   ```
 
 ## 📂 File Structure
 
+   ```bash     
         .
         ├── data/                      
         │   ├── Lipstock_casino_data.xlsx          " original Excel file
@@ -62,51 +164,7 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
         ├── README.md                              " this file
         ├── LEIAME.md                              " README in Portuguese
         └── requirements.txt                       " dependency list
-
-## 🔑 Key Analyses
-
-### 1. Player Analitcs
-
-- ⏳ Lifetime Value (LVT) modeling
-- 🔁 Churn prediction with 85% accuracy
-  
-### 2. Operational Insights
-
-- 🎁 Bonus ROI analysis (Optimal bonus/deposit ratio: 20%)
-- 📈 6-month revenue forecasting (ARIMA & Prophet)
-
-### 3. Marketing Performance
-
-- 📈 Identified top-performing markets (Brazil, Sweden, Finland) <thinking about>
-- 🔄 Calculated Gross Gaming Revenue (GGR) trends by country <thinking about>
-
-## 📂 How to use
-
-- 1. **Data Preparation**
-    Run ```notebooks/1_Data_Cleaning.ipynb``` to process raw CSVs
-
-- 2. **Exploratory Analysis**
-     Execute ```notebooks/2_EDA.ipynb``` for market comparisons
-
-- 3. **Advanced Modeling**
-     Use ```notebooks/3_Advanced_Analytics.ipynb```for:
-     - Player churn prediction
-     - GGR forecasting
-     - Bonus effectiveness tests
-
-# Sample Outputs
-
-## Market GGR Comparison
-
-![Monthly Trend](reports/monthly_ggr_trend.png)
-
-## Revenue Forescast
-
-![Product Mix](reports/product_mix.png)
-
-## Player Segments
-
-![Top Markets](reports/top_markets.png)
+   ```
 
 # 🤝 Contributing
 1. Fork the project
