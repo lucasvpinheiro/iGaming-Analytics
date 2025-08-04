@@ -1,19 +1,20 @@
 # Essential package for data analysis | Pacotes essenciais para análise de dados
-pandas==1.5.3
-numpy==1.24.3
-openpyxl==3.1.2  # For reading Excel | Para leitura de Excel
-pyarrow==12.0.1   # For Parquet format | Para formato Parquet
+pandas==2.2.1
+numpy==2.3.2
+openpyxl==3.1.2 # For reading Excel | Para leitura de Excel
+pyarrow==15.0.2 # For Parquet format | Para formato Parquet
 
 # Data visualization | Visualização de dados
-matplotlib==3.7.1
-seaborn==0.12.2
-plotly==5.15.0
+matplotlib==3.8.3
+seaborn==0.13.2
+plotly==6.2.0
 
 # Jupyter and Interactive Widgets | Jupyter e widgets interativos
 jupyter==1.0.0
-ipywidgets==8.0.6
-ipykernel==6.25.1
+ipywidgets==8.1.2
+ipykernel==6.29.3
 
 # Utilities | Utilitários
 pathlib==1.0.1
-tqdm==4.65.0      # For progress bar (optional) | Para barras de progresso (opcional)
+tqdm==4.66.2      # For progress bar (optional) | Para barras de progresso (opcional)
+setuptools==70.0.0
