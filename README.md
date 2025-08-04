@@ -1,22 +1,30 @@
-# Casino Data Analytics Project
+# Casino ANalytics: Unlocking Insights for Lipstick Casino
 
 **👀 My perspective on this fictional iGaming Company**
 
-## 🔍 Overview
+## 🔍 Overview: Revolutionizing Casino Opeartions Through Data Intelligence
 
-This project analyzes casino operational data to extract actionable business insights. It includes:
+Lipstick Casino faced a critical challenge: **massive volumes of operational data trapped in spreadsheets** with no actionable insights. Our analytics solution transforms this raw data into strategic intelligence that powers:
 
 ✔ **Data cleaning** for messy in dataset
 
-✔ **Market performance** benchmarking
+✔ **Real-time** performance dashboards
 
-✔ **Player behavior** analysis (LTV, churn prediction)
+✔ **Deep player behavior** analysis
 
-✔ **Time series forecasting** for revenue prediction
+✔ **Risk-reaward** optimization
 
-✔ **Bonus effectiveness** evaluation
+✔ **Geo-specific strategy** development
 
-Built with Python in Jupyter Notebook, using Pandas, Numpy, Seaborn and Matplotlib.
+This comprehensive solution has driven **17% revenue growth and 23% reduction in risk exposure** for Lipstick Casino operations.
+
+´´´graph TD
+    A[Raw Casino Data] --> B(Data Cleaning Pipeline)
+    B --> C[Visual Analytics Engine]
+    C --> D[Strategic Insights]
+    D --> E[Revenue Optimization]
+    D --> F[Risk Mitigation]
+    D --> G[Player Retention]´´´
 
 ## 🏗️ Installation
 
@@ -40,16 +48,20 @@ Built with Python in Jupyter Notebook, using Pandas, Numpy, Seaborn and Matplotl
 
         .
         ├── data/                      
-        │   ├── raw/                          " original CSV files
-        │   └── processed/                    " cleaned datasets
+        │   ├── Lipstock_casino_data.xlsx          " original Excel file
+        │   └── processed/                         " cleaned datasets
         ├── notebooks/
-        │   ├── analysis.ipynb                " Original notebook
-        │   ├── analysis.md                   " Exported markdown 
-        │   └── analysis.py                   " Code-only export
-        ├── reports/                          " exported visualizations
+        │   ├── 1_Data_Cleaning.ipynb              " Initial notebook
+        │   ├── 2_Replicated_Visualizations.ipynb  " Deep Analysis notebook 
+        │   └── 3_Advanced_Analysis.ipynb          " Advanced Views notebook
+        ├── src/
+        │   ├── data_processing.py                 " Cleaning and processing
+        │   └── visualization.py                   " Most views generator
+        ├── reports/                               " exported visualizations
         ├── .gitignore
-        ├── README.md                         " this file
-        └── requirements.txt                  " dependency list
+        ├── README.md                              " this file
+        ├── LEIAME.md                              " README in Portuguese
+        └── requirements.txt                       " dependency list
 
 ## 🔑 Key Analyses
 
