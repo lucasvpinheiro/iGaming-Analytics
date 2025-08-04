@@ -1,8 +1,8 @@
-# Casino ANalytics: Unlocking Insights for Lipstick Casino
+# Casino Analytics: Unlocking Insights for Lipstick Casino
 
 **👀 My perspective on this fictional iGaming Company**
 
-## 🔍 Overview: Revolutionizing Casino Opeartions Through Data Intelligence
+## 🔍 Overview: Revolutionizing Casino Operations Through Data Intelligence
 
 Lipstick Casino faced a critical challenge: **massive volumes of operational data trapped in spreadsheets** with no actionable insights. Our analytics solution transforms this raw data into strategic intelligence that powers:
 
@@ -12,7 +12,7 @@ Lipstick Casino faced a critical challenge: **massive volumes of operational dat
 
 ✔ **Deep player behavior** analysis
 
-✔ **Risk-reaward** optimization
+✔ **Risk-reward** optimization
 
 ✔ **Geo-specific strategy** development
 
@@ -64,7 +64,7 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
                                     growth_rate=0.15)
 ```
 
-## 📂 How to use
+## 📂 How to Use
 
 - 1. **Data Preparation**
     Run ```notebooks/1_Data_Cleaning.ipynb``` to process raw CSVs
@@ -81,7 +81,7 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
 
 ## Revenue Transformation
 
-![Revenue Trasnformation](reports/monthly_ggr_trend.png)
+![Revenue Transformation](reports/monthly_ggr_trend.png)
 
 ## Key Metrics:
 
@@ -91,7 +91,13 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
 
 ## Geographic Strategy Matrix
 
-![Table Simple](sample)
+```bash
+| Country    | Top Category | Growth Potential | Risk Level |
+|------------|--------------|------------------|------------|
+| Portugal   | Blackjack    | ★★★★☆            | Medium     |
+| Estonia    | Slots        | ★★★☆☆            | Low        |
+| Lithuania  | Poker        | ★★★★★            | High       |
+```
 
 ## Risk-Return Optimization
 
@@ -117,12 +123,12 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
 
 ### 🏗️ Installation
 
-### 1. Clone the repository:
+### 1. Clone the Repository:
    ```bash
    git clone https://github.com/lucasvpinheiro/iGaming-Analytics.git
    cd casino-data-analytics
    ```
-### 2. Set up a virtual environment (recommended):
+### 2. Set Up a Virtual Environment (recommended):
    ```bash
    python -m venv venv
     source venv/bin/activate  " Linux/Mac
@@ -150,7 +156,7 @@ This comprehensive solution has driven **17% revenue growth and 23% reduction in
    ```bash     
         .
         ├── data/                      
-        │   ├── Lipstock_casino_data.xlsx          " original Excel file
+        │   ├── Lipstick_casino_data.xlsx          " original Excel file
         │   └── processed/                         " cleaned datasets
         ├── notebooks/
         │   ├── 1_Data_Cleaning.ipynb              " Initial notebook
