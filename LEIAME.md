@@ -19,13 +19,13 @@ O Lipstick Casino enfrentava um grande desafio: **volumes massivos de dados oper
 Com isso, alcançamos **17% de crescimento na receita e 23% de redução no risco operacional**.
 
    ```bash
-    graph TD
-        A[Dados Brutos do Cassino] --> B[Pipeline de Limpeza]
-        B --> C[Módulo de Visualização]
-        C --> D[Insights Estratégicos]
-        D --> E[Otimização de Receita]
-        D --> F[Mitigação de Riscos]
-        D --> G[Retenção de Jogadores]
+      graph TD
+         A[Dados Brutos do Cassino] --> B[Pipeline de Limpeza]
+         B --> C[Módulo de Visualização]
+         C --> D[Insights Estratégicos]
+         D --> E[Otimização de Receita]
+         D --> F[Mitigação de Riscos]
+         D --> G[Retenção de Jogadores]
    ```
 
 ## 🔑 Funcionalidades Principais
