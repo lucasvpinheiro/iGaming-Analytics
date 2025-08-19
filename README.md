@@ -19,13 +19,13 @@ Lipstick Casino faced a critical challenge: **massive volumes of operational dat
 This comprehensive solution has driven **17% revenue growth and 23% reduction in risk exposure** for Lipstick Casino operations.
 
    ```bash
-   graph TD
-      A[Raw Casino Data] --> B(Data Cleaning Pipeline)
-      B --> C[Visual Analytics Engine]
-      C --> D[Strategic Insights]
-      D --> E[Revenue Optimization]
-      D --> F[Risk Mitigation]
-      D --> G[Player Retention]
+      graph TD
+         A[Raw Casino Data] --> B(Data Cleaning Pipeline)
+         B --> C[Visual Analytics Engine]
+         C --> D[Strategic Insights]
+         D --> E[Revenue Optimization]
+         D --> F[Risk Mitigation]
+         D --> G[Player Retention]
    ```
 
 ## 🔑 Key Features: The Analytics Powerhouse
